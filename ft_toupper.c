@@ -4,7 +4,7 @@
 
 char*	ft_toupper(char* str)
 {
-	int	i;
+y	int	i;
 
 	i = 0;
 	while (str[i])

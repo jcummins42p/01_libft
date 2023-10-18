@@ -1,40 +1,50 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/18 17:32:47 by jcummins          #+#    #+#             */
+/*   Updated: 2023/10/18 17:55:45 by jcummins         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-#include <unistd.h>
+#include <stdio.h>
 
-int	ft_isalnum(char* str)
+int	ft_isalpha(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if ((str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z')
-			&& (str[i] < '0' || str[i] > '9'))
-			return (0);
-		i++;
-	}
-	return (1);
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		return (1);
+	else
+		return (0);
 }
 
-int	main(int argc, char** argv)
+int	ft_isdigit(int c)
 {
-	if (argc != 2)
-	{
-		write(1, "Error, please provide one argument\n", 35);
+	if (c >= '0' && c <= '9')
 		return (1);
-	}
 	else
-	{
-		write(1, "Thank you for your argument\n", 28);
-	}
-	if (ft_isalnum(argv[1]))
-	{
-		write(1, "The string contains only alnums\n", 33);
-	}
-	else if (!ft_isalnum(argv[1]))
-	{
-		write(1, "The string does not contain only alnums\n", 41);
-	}
-	write(1, "Program exit\n", 13);
+		return (0);
+}
+
+int	ft_isalnum(int c)
+{
+	if (ft_isalpha(c) || ft_isdigit(c))
+		return (1);
+	else
+		return (0);
+}
+
+int	main(int argc, char **argv)
+{
+	unsigned char	c;
+
+	c = '(';
+	if (ft_isalnum(c))
+		printf("The supplied char is alphanumeric");
+	else
+		printf("The supplied char is not alphanumeric");
 	return (0);
 }

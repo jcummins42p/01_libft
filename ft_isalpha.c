@@ -1,39 +1,37 @@
-#include "libft.h"
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/18 16:40:46 by jcummins          #+#    #+#             */
+/*   Updated: 2023/10/18 17:14:02 by jcummins         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_isalpha(char* str)
+#include <stdio.h>
+
+int	ft_isalpha(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if ((str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z'))
-			return (0);
-		i++;
-	}
-	return (1);
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		return (1);
+	else
+		return (0);
 }
 
-int	main(int argc, char** argv)
+int	main(int argc, char **argv)
 {
-	if (argc != 2)
+	unsigned char	c;
+
+	c = 'h';
+	if (ft_isalpha(c))
 	{
-		write(1, "Error, please provide one argument\n", 34);
-		return (1);
+		printf("The char is alphabetic");
 	}
-	else
+	else if (!ft_isalpha(c))
 	{
-		write(1, "Thank you for your argument\n", 28);
+		printf("The char is not alphabetic");
 	}
-	if (ft_isalpha(argv[1]))
-	{
-		write(1, "The string contains only alphas\n", 33);
-	}
-	else if (!ft_isalpha(argv[1]))
-	{
-		write(1, "The string does not contain only alphas\n", 41);
-	}
-	write(1, "Program exit\n", 13);
 	return (0);
 }
