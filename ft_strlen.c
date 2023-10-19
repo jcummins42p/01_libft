@@ -1,8 +1,18 @@
-#include "libft.h"
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/19 13:14:18 by jcummins          #+#    #+#             */
+/*   Updated: 2023/10/19 13:16:53 by jcummins         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
-int	ft_strlen(char* str)
+int	ft_strlen(char *str)
 {
 	int	i;
 
@@ -12,16 +22,11 @@ int	ft_strlen(char* str)
 	return (i);
 }
 
-int	main(int argc, char** argv)
+int	main(void)
 {
-	if (argc != 2)
-	{
-		write(1, "Error, please provide one argument\n", 35);
-		return (1);
-	}
-	else
-	{
-		printf("The length of your string is %d", ft_strlen(argv[1]));
-	}
+	char	*str;
+
+	str = "hello";
+	printf("The length of your string is %d", ft_strlen(str));
 	return (0);
 }

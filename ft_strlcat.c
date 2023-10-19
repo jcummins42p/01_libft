@@ -1,7 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/19 17:48:46 by jcummins          #+#    #+#             */
+/*   Updated: 2023/10/19 18:00:13 by jcummins         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <string.h>
 
 int	strlcat(char *dst, const char *src, size_t size)
 {
+	size_t	i;
+	
+	i = 0;
 
 	return ( "total length of the string they tried to create" )
 }

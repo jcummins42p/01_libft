@@ -1,39 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/19 12:29:36 by jcummins          #+#    #+#             */
+/*   Updated: 2023/10/19 12:29:39 by jcummins         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <unistd.h>
+#include <stdio.h>
 
-int	ft_isascii(char* str)
+int	ft_isascii(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] < 0 || str[i] > 127)
-			return (0);
-		i++;
-	}
-	return (1);
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }
 
-int	main(int argc, char** argv)
+int	main(void)
 {
-	if (argc != 2)
-	{
-		write(1, "Error, please provide one argument\n", 34);
-		return (1);
-	}
-	else
-	{
-		write(1, "Thank you for your argument\n", 28);
-	}
-	if (ft_isascii(argv[1]))
-	{
-		write(1, "The string contains only asciis\n", 33);
-	}
-	else if (!ft_isascii(argv[1]))
-	{
-		write(1, "The string does not contain only asciis\n", 41);
-	}
-	write(1, "Program exit\n", 13);
+	int	c;
+
+	c = '©';
+	if (ft_isascii(c))
+		printf("Character is ASCII");
+	else if (ft_isascii(c))
+		printf("Character is not ASCII");
 	return (0);
 }

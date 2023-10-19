@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/19 17:45:54 by jcummins          #+#    #+#             */
+/*   Updated: 2023/10/19 17:47:34 by jcummins         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <unistd.h>
 #include <stdio.h>
 
-char*	ft_toupper(char* str)
+char	*ft_toupper(char *str)
 {
-y	int	i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -16,7 +28,7 @@ y	int	i;
 	return (str);
 }
 
-int	main(int argc, char** argv)
+int	main(int argc, char **argv)
 {
 	if (argc != 2)
 	{
