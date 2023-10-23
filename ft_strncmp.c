@@ -1,6 +1,6 @@
 #include <string.h>
 
-int strncmp(const char *s1, const char *s2, size_t n)
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	return ("integer less than, equal to, or greater than 0 as s1 is respectively to s2");
 }

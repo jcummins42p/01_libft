@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 15:28:36 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/19 17:43:40 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:18:56 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,25 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	size_t				i;
 	unsigned char		*pdest;
 	const unsigned char	*psrc;
-	unsigned char		*temp;
 
 	i = 0;
 	pdest = (unsigned char *)dest;
 	psrc = (unsigned char *)src;
-	temp = (unsigned char *)malloc(n);
-	while (i < n)
+	if (src > dest)
 	{
-		temp[i] = psrc[i];
-		i++;
+		while (pdest[i] && (i < n))
+		{
+			pdest[i] = psrc[i];
+			i++;
+		}
 	}
-	i = 0;
-	while (i < n)
+	else if (src < dest)
 	{
-		pdest[i] = temp[i];
-		i++;
+		while (n > 0)
+		{
+			pdest[n - 1] = psrc[n - 1];
+			n--;
+		}
 	}
 	return (dest);
 }
@@ -45,7 +48,8 @@ int	main(void)
 	char	dest[] = "General Kenobi";
 
 	printf("%s!\n", dest);
-	ft_memmove(dest, src + 5, 4);
-	printf("%s!\n", dest);
+	printf("%s!\n", src);
+	ft_memmove(src + 6, src, 5);
+	printf("%s!\n", src);
 	return (0);
 }

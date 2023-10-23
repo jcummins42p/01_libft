@@ -1,6 +1,6 @@
 #include <string.h>
 
-int memcmp(const void *s1, const void *s2, size_t n)
+int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	return (/*integer less than, qual to or greater than 0 depending on the first byte of difference*/);
 }

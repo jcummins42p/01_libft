@@ -6,23 +6,39 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:48:46 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/19 18:00:13 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/23 14:33:32 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#include <stdio.h>
 
-int	strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	
-	i = 0;
+	size_t	tlen;
 
-	return ( "total length of the string they tried to create" )
+	i = 0;
+	tlen = 0;
+	while (dst[tlen])
+		tlen++;
+	while (i < (size - 1) && src[i])
+		dst[tlen++] = src[i++];
+	dst[tlen] = '\0';
+	return (tlen);
 }
 
+int	main(void)
+{
+	char	*src = "General Kenobi";
+	char	dst[40] = "Hello There, ";
+	size_t	nb;
 
-
+	nb = 12;
+	printf("The total string length is %ld\n", ft_strlcat(dst, src, nb));
+	printf("%s\n", dst);
+	return(0);
+}
 /*
 NAME
      strlcpy, strlcat — size-bounded string copying and concatenation

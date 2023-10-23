@@ -1,8 +1,8 @@
 #include <stdlib.h>
 
-int atoi(const char *nptr)
+int ft_atoi(const char *nptr)
 {
-	
+
 
 	return (/*converted value or 0 on error*/)
 }
