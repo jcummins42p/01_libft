@@ -1,10 +1,46 @@
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/23 16:54:17 by jcummins          #+#    #+#             */
+/*   Updated: 2023/10/23 16:54:40 by jcummins         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *strrchr(const char *s, int c)
+#include <string.h>
+#include <stdio.h>
+
+char	*ft_strrchr(const char *s, int c)
 {
-	return ("pointer to matched char");
+	int	i;
+
+	i = 0;
+	while (*s)
+	{
+		s++;
+		i++;
+	}
+	while (i >= 0)
+	{
+		if (*s == (char)c)
+			return ((char *)s);
+		s--;
+		i--;
+	}
+	return ("NULL");
 }
 
+int	main(void)
+{
+	const char		*str = "The quick brown fox jumps over the lazy dog";
+	unsigned char	c = 'T';
+
+	printf("found the char %c at \"%s\" in the string.\n", c, ft_strrchr(str, c));
+	return (0);
+}
 /*
 DESCRIPTION
        The strchr() function returns a pointer to the first occurrence of the character c in the string

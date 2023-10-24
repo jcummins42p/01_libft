@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 13:24:21 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/24 15:18:47 by jcummins         ###   ########.fr       */
+/*   Created: 2023/10/24 15:56:25 by jcummins          #+#    #+#             */
+/*   Updated: 2023/10/24 17:02:45 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char	*ft_strdup(const char *s)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *dup;
-	unsigned int len;
-	unsigned int i;
+	char	*sub;
+	size_t	i;
 
-	len = 0;
-	while (s[len])
-		len++;
-	dup = (char *)malloc(len * sizeof(char));
 	i = 0;
-	while (i < len)
+	sub = (char *)malloc((len) * sizeof(char));
+	if (sub == NULL)
+		return (NULL);
+	while (i < len && s[start])
 	{
-		dup[i] = s[i];
-		i++;
+		sub[i++] = s[start++];
 	}
-	return (dup);
+	return (sub);
 }
 
 int	main(void)
 {
-	const char	*src = "Original String to be duplicated";
-	printf("%s\n", ft_strdup(src));
+	char	*str = "Test String";
+
+	printf("The string is: \"%s\"\n", str);
+	printf("The string is: \"%s\"\n", ft_substr(str, 9, 1));
 	return (0);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 13:24:21 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/24 15:18:47 by jcummins         ###   ########.fr       */
+/*   Created: 2023/10/24 17:05:20 by jcummins          #+#    #+#             */
+/*   Updated: 2023/10/24 17:43:37 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,39 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char	*ft_strdup(const char *s)
+char	*ft_strtrim(char const *s1, char c)
 {
-	char *dup;
-	unsigned int len;
-	unsigned int i;
+	char	*trim;
+	size_t	i;
+	size_t	j;
+	size_t	k;
 
-	len = 0;
-	while (s[len])
-		len++;
-	dup = (char *)malloc(len * sizeof(char));
 	i = 0;
-	while (i < len)
+	j = 0;
+	k = 0;
+	while (s1[i] == c)
+		i++;
+	while (s1[i])
 	{
-		dup[i] = s[i];
+		j++;
 		i++;
 	}
-	return (dup);
+	while (s1[--i] == c)
+		j--;
+	trim = (char *)malloc(j * sizeof(char));
+	if (trim == NULL)
+		return (NULL);
+	while (k < j)
+		trim[k++] = s1[(++i - j)];
+	trim[k] = '\0';
+	return (trim);
 }
 
 int	main(void)
 {
-	const char	*src = "Original String to be duplicated";
-	printf("%s\n", ft_strdup(src));
+	char	*s = "GGGHello There!GGGGG";
+	char	c = 'G';
+
+	printf("The trimmed string is: \"%s\"\n", ft_strtrim(s, c));
 	return (0);
 }

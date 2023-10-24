@@ -6,17 +6,30 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 14:37:43 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/23 14:43:49 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/23 16:55:19 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#include <stdio.h>
 
-char *ft_strchr(const char *s, int c);
+char *ft_strchr(const char *s, int c)
 {
-	return ("pointer to matched char");
+	while (*s++)
+	{
+		if (*s == (char)c)
+			return ((char *)s);
+	}
+	return (NULL);
 }
 
+int	main(void)
+{
+	const char		*str = "The quick :@ brown fox :P jumps over :0 the lazy :| dog!";
+	unsigned char	c = '|';
+
+	printf("Found the char %c at \"%s\" in the string.\n", c, ft_strchr(str, c));
+}
 /*
 DESCRIPTION
        The strchr() function returns a pointer to the first occurrence of the character c in the string

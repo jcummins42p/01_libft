@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 13:24:18 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/19 14:53:35 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:38:19 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ void	*memset(void *s, int c, size_t n)
 	return (s);
 }
 
-int	main(void)
-{
-	char msg[] = "test with this array of characters";
+/*int	main(void)*/
+/*{*/
+	/*char msg[] = "test with this array of characters";*/
 
-	printf("The string before memset is %s\n", msg);
-	memset(msg, '0', 5);
-	printf("The string after memset is %s\n", msg);
-	return (0);
-}
+	/*printf("The string before memset is %s\n", msg);*/
+	/*memset(msg, '0', 5);*/
+	/*printf("The string after memset is %s\n", msg);*/
+	/*return (0);*/
+/*}*/

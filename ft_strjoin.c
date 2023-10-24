@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 13:24:21 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/24 15:18:47 by jcummins         ###   ########.fr       */
+/*   Created: 2023/10/24 16:28:46 by jcummins          #+#    #+#             */
+/*   Updated: 2023/10/24 17:03:44 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,37 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char	*ft_strdup(const char *s)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *dup;
-	unsigned int len;
-	unsigned int i;
+	char	*join;
+	size_t	i;
+	size_t	j;
 
-	len = 0;
-	while (s[len])
-		len++;
-	dup = (char *)malloc(len * sizeof(char));
 	i = 0;
-	while (i < len)
-	{
-		dup[i] = s[i];
+	j = 0;
+	while (s1[i])
 		i++;
-	}
-	return (dup);
+	while (s2[j++])
+		i++;
+	join = (char *)malloc(i * sizeof(char));
+	if (join == NULL)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (s1[i])
+		join[j++] = s1[i++];
+	i = 0;
+	while (s2[i])
+		join[j++] = s2[i++];
+	join[j] = '\0';
+	return (join);
 }
 
 int	main(void)
 {
-	const char	*src = "Original String to be duplicated";
-	printf("%s\n", ft_strdup(src));
+	char	*str1 = "Hello There ";
+	char	*str2 = "General Kenobi";
+
+	printf("The string is: \"%s\"\n", ft_strjoin(str1, str2));
 	return (0);
 }
