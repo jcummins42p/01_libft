@@ -1,6 +1,7 @@
-CFLAGS = -g -Werror -Wextra -Wall
+NAME = libft.a
+HEADER = libft.h
 CC = gcc
-NAME = libft.out
+CFLAGS = -g -Werror -Wextra -Wall
 SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c\
 	   ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c\
 	   ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c\
@@ -20,19 +21,19 @@ OBJS = ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o\
 all: final
 
 final: $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -c $(NAME)
-
-ft_isalpha:
-	@CC $(CFLAGS) -c ft_isalpha.c
+	$(CC) $(CFLAGS) -c $(SRCS)
+	ar rc $(NAME) $(OBJS)
+	ranlib $(NAME)
 
 clean:
 	@echo "Removing all object files"
-	@rm -rf *.o	#is this safe?
+	@rm -rf $(OBJS)
 
 fclean:
-	@echo "Removing all object files and executable"
-	@rm -rf *.o
-	@rm -rf *.out
+	@echo "Removing all object files and library"
+	@rm -rf $(OBJS)
+	@rm -rf *.a
+
 
 re:	fclean
 	$(MAKE) all
