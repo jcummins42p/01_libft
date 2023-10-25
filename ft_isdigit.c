@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 17:14:23 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/18 17:30:52 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/25 16:57:02 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_isdigit(int c)
 		return (0);
 }
 
-int	main(int argc, char	**argv)
+int	main(void)
 {
 	unsigned char	c;
 

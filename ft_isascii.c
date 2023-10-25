@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:29:36 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/19 12:29:39 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/25 16:59:14 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(void)
 {
 	int	c;
 
-	c = '©';
+	c = 'C';
 	if (ft_isascii(c))
 		printf("Character is ASCII");
 	else if (ft_isascii(c))
