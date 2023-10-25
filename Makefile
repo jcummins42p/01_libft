@@ -16,6 +16,13 @@ clean:
 	@echo "Removing all object files"
 	@rm *.o	#is this safe?
 
+fclean:
+	# ??????
+
+re:
+
+bonus:
+
 target:
 	The token $@ is an automatic variable which contains the target name.
 

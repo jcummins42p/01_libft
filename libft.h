@@ -6,12 +6,18 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:38:35 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/24 17:45:46 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/25 16:18:53 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+typedef struct	s_list
+{
+	void			*content;
+	struct	s_list	*next;
+}				t_list
 
 //		Part 1 - Libc functions
 int		ft_isalpha(int c);
