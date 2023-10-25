@@ -6,15 +6,13 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:05:20 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/24 17:43:37 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/25 18:59:12 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strtrim(char const *s1, char c)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*trim;
 	size_t	i;
@@ -24,14 +22,14 @@ char	*ft_strtrim(char const *s1, char c)
 	i = 0;
 	j = 0;
 	k = 0;
-	while (s1[i] == c)
+	while (s1[i] == set[0])
 		i++;
 	while (s1[i])
 	{
 		j++;
 		i++;
 	}
-	while (s1[--i] == c)
+	while (s1[--i] == set[0])
 		j--;
 	trim = (char *)malloc(j * sizeof(char));
 	if (trim == NULL)
@@ -42,11 +40,11 @@ char	*ft_strtrim(char const *s1, char c)
 	return (trim);
 }
 
-int	main(void)
-{
-	char	*s = "GGGHello There!GGGGG";
-	char	c = 'G';
+/*int	main(void)*/
+/*{*/
+	/*char	*s = "GGGHello There!GGGGG";*/
+	/*char	c = 'G';*/
 
-	printf("The trimmed string is: \"%s\"\n", ft_strtrim(s, c));
-	return (0);
-}
+	/*printf("The trimmed string is: \"%s\"\n", ft_strtrim(s, c));*/
+	/*return (0);*/
+/*}*/

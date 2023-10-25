@@ -6,12 +6,11 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 15:28:36 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/19 16:47:57 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/25 18:45:50 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -30,13 +29,15 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-int	main(void)
-{
-	char	src[] = "Hello There";
-	char	dest[] = "General Kenobi";
+/*int	main(void)*/
+/*{*/
+	/*char	src[11] = "Hello There";*/
+	/*char	dest[14] = "General Kenobi";*/
 
-	printf("%s, %s!\n", src, dest);
-	ft_memcpy(dest, src, 10);
-	printf("%s, %s!\n", src, dest);
-	return (0);
-}
+	/*src = "Hello There";*/
+	/*dest = "General Kenobi";*/
+	/*printf("%s, %s!\n", src, dest);*/
+	/*ft_memcpy(dest, src, 10);*/
+	/*printf("%s, %s!\n", src, dest);*/
+	/*return (0);*/
+/*}*/

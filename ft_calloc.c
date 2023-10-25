@@ -6,15 +6,11 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 13:19:34 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/24 15:06:38 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/25 18:52:14 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
-
-void	*memset(void *s, int c, size_t n);
+#include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
@@ -32,22 +28,22 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	return (ptr);
 }
 
-int	main(void)
-{
-	int	*ptr;
-	int	i;
+/*int	main(void)*/
+/*{*/
+	/*int	*ptr;*/
+	/*int	i;*/
 
-	i = 0;
-	ptr = (int *)ft_calloc(10, sizeof(int));
-	if (ptr == NULL)
-	{
-		printf("Memory not allocated");
-		return (0);
-	}
-	while(i < 10)
-	{
-		printf("%d ", ptr[i]);
-		i++;
-	}
-	return (0);
-}
+	/*i = 0;*/
+	/*ptr = (int *)ft_calloc(10, sizeof(int));*/
+	/*if (ptr == NULL)*/
+	/*{*/
+		/*printf("Memory not allocated");*/
+		/*return (0);*/
+	/*}*/
+	/*while (i < 10)*/
+	/*{*/
+		/*printf("%d ", ptr[i]);*/
+		/*i++;*/
+	/*}*/
+	/*return (0);*/
+/*}*/

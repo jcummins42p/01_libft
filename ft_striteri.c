@@ -6,50 +6,39 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 15:33:55 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/25 15:47:58 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/25 19:28:52 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
-int	ft_strlen(const char *s)
+void	remap(unsigned int i, char *c)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	if (c[0] != ' ')
+		c[0] = c[0] + i;
 }
 
-char	remap(unsigned int i, char c)
-{
-	if (c != ' ')
-		c = c + i;
-	return (c);
-}
-
-void	*ft_striteri(char *s, char (*f)(unsigned int, char))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	size_t	i;
 
 	i = 0;
-	while (s[i])
+	if (s && f)
 	{
-		s[i] = f(1, s[i]);
-		i++;
+		while (s[i])
+		{
+			f(1, &s[i]);
+			i++;
+		}
 	}
-	return (0);
 }
 
-int	main(void)
-{
-	char	str1[12] = "Hello There!";
+/*int	main(void)*/
+/*{*/
+	/*char	str1[12] = "Hello There!";*/
 
-	printf("Untranslated string: %s\n", str1);
-	ft_striteri(str1, *remap);
-	printf("Translated string: %s\n", str1);
-	return (0);
-}
+	/*printf("Untranslated string: %s\n", str1);*/
+	/*ft_striteri(str1, remap);*/
+	/*printf("Translated string: %s\n", str1);*/
+	/*return (0);*/
+/*}*/

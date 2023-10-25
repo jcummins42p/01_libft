@@ -6,19 +6,16 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 13:24:21 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/24 15:18:47 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/25 18:52:56 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {
-	char *dup;
-	unsigned int len;
-	unsigned int i;
+	char			*dup;
+	unsigned int	len;
+	unsigned int	i;
 
 	len = 0;
 	while (s[len])
@@ -33,9 +30,10 @@ char	*ft_strdup(const char *s)
 	return (dup);
 }
 
-int	main(void)
-{
-	const char	*src = "Original String to be duplicated";
-	printf("%s\n", ft_strdup(src));
-	return (0);
-}
+/*int	main(void)*/
+/*{*/
+	/*const char	*src = "Original String to be duplicated";*/
+
+	/*printf("%s\n", ft_strdup(src));*/
+	/*return (0);*/
+/*}*/

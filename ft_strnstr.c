@@ -6,12 +6,11 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 17:52:24 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/23 18:58:08 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/25 18:44:08 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -39,18 +38,13 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	return (0);
 }
 
-int	main(void)
-{
-	const char	*big = "The quick brown fox jumps over the lazy dog";
-	const char	*little = "T";
-	size_t		len = 60;
+/*int	main(void)*/
+/*{*/
+	/*const char	*big = "The quick brown fox jumps over the lazy dog";*/
+	/*const char	*little = "T";*/
+	/*size_t		len;*/
 
-	printf("%s", ft_strnstr(big, little, len));
-
-	return (0);
-}
-/*DESCRIPTION*/
-	/*The strnstr() function locates the first occurrence of the null-terminated string little in the string big, where not more than len characters are searched. Characters that appear after a '\0' character are not searched. Since the strnstr() function is a FreeBSD specific API, it should only e used when portability is not a concern.*/
-
-/*RETURN VALUES*/
-/*If little is an empty string, big is returned; if little occurs nowhere in big, NULL is returned; otherwise a pointer to the first character of the first occurrence of little is returned.*/
+	/*len = 60;*/
+	/*printf("%s", ft_strnstr(big, little, len));*/
+	/*return (0);*/
+/*}*/

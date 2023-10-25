@@ -6,13 +6,13 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 15:48:45 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/25 16:01:07 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/25 19:29:43 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
@@ -20,6 +20,5 @@ void ft_putchar_fd(char c, int fd)
 int	main(void)
 {
 	ft_putchar_fd('f', 1);
-
-	return(0);
+	return (0);
 }
