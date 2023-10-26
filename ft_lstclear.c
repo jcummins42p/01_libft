@@ -1,44 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 16:54:17 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/26 14:24:08 by jcummins         ###   ########.fr       */
+/*   Created: 2023/10/26 16:58:31 by jcummins          #+#    #+#             */
+/*   Updated: 2023/10/26 18:17:14 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_lstclear(t_list *lst, void (*del)(void*))
 {
-	int	i;
+	t_list	*curr;
+	t_list	*aux;
 
-	i = 0;
-	while (*s)
+	curr = *lst;
+	while (curr != NULL)
 	{
-		s++;
-		i++;
+		aux = curr;
+		curr = curr->next;
+		free(aux);
 	}
-	while (i >= 0)
-	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s--;
-		i--;
-	}
-	return ("NULL");
+	*lst = NULL;
 }
-
-/*int	main(void)*/
-/*{*/
-	/*const char		*str;*/
-	/*unsigned char	c;*/
-
-	/*str = "The quick brown fox jumps over the lazy dog";*/
-	/*c = 'T';*/
-	/*printf("found %c at \"%s\"\n", c, ft_strrchr(str, c));*/
-	/*return (0);*/
-/*}*/

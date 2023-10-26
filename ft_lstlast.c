@@ -1,44 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 16:54:17 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/26 14:24:08 by jcummins         ###   ########.fr       */
+/*   Created: 2023/10/26 16:47:00 by jcummins          #+#    #+#             */
+/*   Updated: 2023/10/26 19:30:26 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+t_list	*ft_lstlast(t_list *lst)
 {
-	int	i;
+	t_list	*curr;
 
-	i = 0;
-	while (*s)
-	{
-		s++;
-		i++;
-	}
-	while (i >= 0)
-	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s--;
-		i--;
-	}
-	return ("NULL");
+	curr = lst;
+	while (curr->next != NULL)
+		curr = curr->next;
+	return (curr);
 }
 
 /*int	main(void)*/
 /*{*/
-	/*const char		*str;*/
-	/*unsigned char	c;*/
+	/*int	content = 4;*/
 
-	/*str = "The quick brown fox jumps over the lazy dog";*/
-	/*c = 'T';*/
-	/*printf("found %c at \"%s\"\n", c, ft_strrchr(str, c));*/
+	/*t_list	*testl = ftlstnew(&content);*/
 	/*return (0);*/
 /*}*/

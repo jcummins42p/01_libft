@@ -1,44 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 16:54:17 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/26 14:24:08 by jcummins         ###   ########.fr       */
+/*   Created: 2023/10/26 14:16:44 by jcummins          #+#    #+#             */
+/*   Updated: 2023/10/26 19:08:01 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+t_list	*ft_lstnew(void *content)
 {
-	int	i;
+	t_list	*root;
 
-	i = 0;
-	while (*s)
-	{
-		s++;
-		i++;
-	}
-	while (i >= 0)
-	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s--;
-		i--;
-	}
-	return ("NULL");
+	root = malloc(sizeof(t_list));
+	if (root == NULL)
+		exit (2);
+	root->content = content;
+	root->next = NULL;
+	return (root);
 }
 
 /*int	main(void)*/
 /*{*/
-	/*const char		*str;*/
-	/*unsigned char	c;*/
+	/*int		send = 4;*/
+	/*t_list	*newlist = ft_lstnew(&send);*/
+	/*int		*valueptr = (int *)(newlist->content);*/
 
-	/*str = "The quick brown fox jumps over the lazy dog";*/
-	/*c = 'T';*/
-	/*printf("found %c at \"%s\"\n", c, ft_strrchr(str, c));*/
+	/*printf("The value stored in the list is %d\n", *valueptr);*/
 	/*return (0);*/
 /*}*/

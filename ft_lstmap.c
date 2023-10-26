@@ -1,44 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 16:54:17 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/26 14:24:08 by jcummins         ###   ########.fr       */
+/*   Created: 2023/10/26 17:04:30 by jcummins          #+#    #+#             */
+/*   Updated: 2023/10/26 17:07:33 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	int	i;
 
-	i = 0;
-	while (*s)
-	{
-		s++;
-		i++;
-	}
-	while (i >= 0)
-	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s--;
-		i--;
-	}
-	return ("NULL");
+	return ();
 }
 
-/*int	main(void)*/
-/*{*/
-	/*const char		*str;*/
-	/*unsigned char	c;*/
-
-	/*str = "The quick brown fox jumps over the lazy dog";*/
-	/*c = 'T';*/
-	/*printf("found %c at \"%s\"\n", c, ft_strrchr(str, c));*/
-	/*return (0);*/
-/*}*/
+// Iterates the list 'lst' and applies the function 'f' on the content of each node.
+// Creates a new list resulting of the successive applications of the function 'f'.
+// The 'del' function is used to delete the content of a node if needed.
