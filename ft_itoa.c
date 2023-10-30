@@ -6,14 +6,11 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 12:07:45 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/25 14:14:19 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/30 17:08:45 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
+#include "libft.h"
 
 int	n_digits(int n)
 {
@@ -66,11 +63,11 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
-int	main(void)
-{
-	int	i;
+/*int	main(void)*/
+/*{*/
+	/*int	i;*/
 
-	i = 2147483647;
-	printf("The number %d as a string is %s\n", i, ft_itoa(i));
-	return (0);
-}
+	/*i = 2147483647;*/
+	/*printf("The number %d as a string is %s\n", i, ft_itoa(i));*/
+	/*return (0);*/
+/*}*/

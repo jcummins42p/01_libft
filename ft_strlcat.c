@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:48:46 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/25 17:45:14 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/30 18:55:17 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	tlen = 0;
 	while (dst[tlen])
 		tlen++;
-	while (i < (size - 1) && src[i])
+	while (tlen < (size - 1) && src[i])
 		dst[tlen++] = src[i++];
 	dst[tlen] = '\0';
 	return (tlen);

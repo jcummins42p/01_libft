@@ -6,14 +6,11 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:46:20 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/24 19:12:22 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/30 16:59:58 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 
 static unsigned int	wcount(char const *s, char c)
 {
@@ -76,16 +73,16 @@ char	**ft_split(char const *s, char c)
 	return (split);
 }
 
-int	main(void)
-{
-	char const	*str;
-	char		c;
-	int			i;
+/*int	main(void)*/
+/*{*/
+	/*char const	*str;*/
+	/*char		c;*/
+	/*int			i;*/
 
-	str = "One two three four five";
-	c = ' ';
-	i = 0;
-	while (i < 5)
-		printf("Count of %s\n", ft_split(str, c)[i++]);
-	return (0);
-}
+	/*str = "One two three four five";*/
+	/*c = ' ';*/
+	/*i = 0;*/
+	/*while (i < 5)*/
+		/*printf("Count of %s\n", ft_split(str, c)[i++]);*/
+	/*return (0);*/
+/*}*/

@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:56:25 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/25 18:53:16 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/30 17:07:46 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (sub);
 }
 
-int	main(void)
-{
-	char	*str;
+/*int	main(void)*/
+/*{*/
+	/*char	*str;*/
 
-	str = "Test String";
-	printf("The string is: \"%s\"\n", str);
-	printf("The string is: \"%s\"\n", ft_substr(str, 9, 1));
-	return (0);
-}
+	/*str = "Test String";*/
+	/*printf("The string is: \"%s\"\n", str);*/
+	/*printf("The string is: \"%s\"\n", ft_substr(str, 9, 1));*/
+	/*return (0);*/
+/*}*/

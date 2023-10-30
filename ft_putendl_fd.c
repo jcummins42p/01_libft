@@ -6,11 +6,11 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 16:01:55 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/25 16:09:36 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/30 17:13:59 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {
@@ -22,11 +22,11 @@ void	ft_putendl_fd(char *s, int fd)
 	write(fd, "\n", 1);
 }
 
-int	main(void)
-{
-	char	*str;
+/*int	main(void)*/
+/*{*/
+	/*char	*str;*/
 
-	str = "Hello There";
-	ft_putendl_fd(str, 1);
-	return (0);
-}
+	/*str = "Hello There";*/
+	/*ft_putendl_fd(str, 1);*/
+	/*return (0);*/
+/*}*/

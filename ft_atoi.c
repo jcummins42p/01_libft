@@ -6,12 +6,11 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 19:03:56 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/25 12:51:06 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/30 16:56:01 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
 int	is_whitespace(char c)
 {
@@ -39,10 +38,10 @@ int	ft_atoi(const char *nptr)
 	return (result * sign);
 }
 
-int	main(void)
-{
-	const char	*message = "	   f-12343g";
+/*int	main(void)*/
+/*{*/
+	/*const char	*message = "	   f-12343g";*/
 
-	printf("String is %s, integer is %d\n", message, ft_atoi(message));
-	return (0);
-}
+	/*printf("String is %s, integer is %d\n", message, ft_atoi(message));*/
+	/*return (0);*/
+/*}*/

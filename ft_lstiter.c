@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 17:01:38 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/30 15:59:31 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/30 17:49:37 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,8 @@ void	func(void *content)
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	// iterates the list 'lst' and applies the function
-	// 'f' on the contents of each node.
-	//
 	t_list	*curr;
 	int		*x;
-
 
 	*x = 2;
 	curr = lst;

@@ -6,13 +6,11 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:38:43 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/19 12:47:22 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/30 17:05:41 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <unistd.h>
 
 int	ft_isprint(int c)
 {
@@ -21,14 +19,14 @@ int	ft_isprint(int c)
 	return (0);
 }
 
-int	main(void)
-{
-	unsigned char	c;
+/*int	main(void)*/
+/*{*/
+	/*unsigned char	c;*/
 
-	c = 213;
-	if (ft_isprint(c))
-		printf("Character is printable");
-	else if (!ft_isprint(c))
-		printf("Character is not printable");
-	return (0);
-}
+	/*c = 213;*/
+	/*if (ft_isprint(c))*/
+		/*printf("Character is printable");*/
+	/*else if (!ft_isprint(c))*/
+		/*printf("Character is not printable");*/
+	/*return (0);*/
+/*}*/

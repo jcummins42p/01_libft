@@ -6,7 +6,7 @@
 #    By: jcummins <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/26 18:08:59 by jcummins          #+#    #+#              #
-#    Updated: 2023/10/30 16:43:13 by jcummins         ###   ########.fr        #
+#    Updated: 2023/10/30 18:58:04 by jcummins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,11 +58,15 @@ fclean:
 	@echo "Removing all object files and library"
 	@rm -rf $(OBJS) $(BOBS) $(NAME)
 
-re:	fclean
-	$(MAKE) all
+re:	fclean all
 
 target:
 	The token $@ is an automatic variable which contains the target name.
+
+so:
+	$(CC) -nostartfiles -fPIC $(PIC) $(CFLAGS) $(SRCS)
+	pcc -nostartfiles -shared -o libft.so $(OBJS)
+
 
 						#~Makefile Basics~
 #Makefiles compile or recompile parts of a large program. If a file's dependencies change, we want to recompile it. The makefile will judge if newer or altered files are available by checking the timestamps on the specified files - this usally works but can cause some problems if the user starts messing around with timestamps with the touch command.

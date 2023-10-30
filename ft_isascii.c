@@ -6,13 +6,11 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:29:36 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/25 16:59:14 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/30 16:59:01 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
-#include <stdio.h>
 
 int	ft_isascii(int c)
 {
@@ -21,14 +19,14 @@ int	ft_isascii(int c)
 	return (0);
 }
 
-int	main(void)
-{
-	int	c;
+/*int	main(void)*/
+/*{*/
+	/*int	c;*/
 
-	c = 'C';
-	if (ft_isascii(c))
-		printf("Character is ASCII");
-	else if (ft_isascii(c))
-		printf("Character is not ASCII");
-	return (0);
-}
+	/*c = 'C';*/
+	/*if (ft_isascii(c))*/
+		/*printf("Character is ASCII");*/
+	/*else if (ft_isascii(c))*/
+		/*printf("Character is not ASCII");*/
+	/*return (0);*/
+/*}*/

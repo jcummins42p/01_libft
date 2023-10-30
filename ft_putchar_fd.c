@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 15:48:45 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/25 19:29:43 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/30 17:00:29 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	ft_putchar_fd(char c, int fd)
 	write(fd, &c, 1);
 }
 
-int	main(void)
-{
-	ft_putchar_fd('f', 1);
-	return (0);
-}
+/*int	main(void)*/
+/*{*/
+	/*ft_putchar_fd('f', 1);*/
+	/*return (0);*/
+/*}*/

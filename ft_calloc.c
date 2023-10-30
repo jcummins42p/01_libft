@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 13:19:34 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/25 18:52:14 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/30 18:05:43 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	else
 	{
 		ptr = (void *)malloc(size * nmemb);
-		memset(ptr, 0, (size * nmemb));
+		ft_memset(ptr, 0, (size * nmemb));
 	}
 	return (ptr);
 }
