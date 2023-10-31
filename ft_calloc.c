@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 13:19:34 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/30 18:05:43 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/31 19:58:41 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,20 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
+	size_t	total;
 
-	if ((size * nmemb) > INT_MAX)
+	if (nmemb >= SIZE_MAX || size >= SIZE_MAX)
+		return (NULL);
+	total = (nmemb * size);
+	if (total >= INT_MAX)
+		return (NULL);
+	ptr = (void *)malloc(total);
+	if (!ptr)
 	{
+		free (ptr);
 		return (NULL);
 	}
-	else
-	{
-		ptr = (void *)malloc(size * nmemb);
-		ft_memset(ptr, 0, (size * nmemb));
-	}
+	ft_memset(ptr, 0, total);
 	return (ptr);
 }
 

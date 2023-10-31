@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 13:58:48 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/30 17:28:04 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/31 19:12:44 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,19 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
-	if (size == 1)
-		dst[i] = '\0';
-	while (src[i] && (i < size - 1))
+	if (size > 0)
 	{
-		dst[i] = src[i];
-		i++;
+		while (src[i] && (i < size - 1))
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	dst[i] = '\0';
-	return (i);
+	return (ft_strlen(src));
 }
 
 /*int	main(void)*/

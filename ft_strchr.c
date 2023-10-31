@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 14:37:43 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/25 17:44:23 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/31 18:38:36 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s++)
+	while (*s)
 	{
 		if (*s == (char)c)
 			return ((char *)s);
+		else
+			s++;
 	}
-	return (NULL);
+	if (*s == (char)c)
+		return ((char *)s);
+	return (0);
 }
 
 /*int	main(void)*/

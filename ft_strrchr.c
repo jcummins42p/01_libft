@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 16:54:17 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/26 14:24:08 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/10/31 18:51:57 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,21 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
+	int	found;
 
 	i = 0;
+	found = 0;
 	while (*s)
 	{
+		if (*s == (char)c)
+			found = 1;
 		s++;
 		i++;
 	}
+	if (*s == (char)c)
+		return ((char *)s);
+	if (!found)
+		return (NULL);
 	while (i >= 0)
 	{
 		if (*s == (char)c)
@@ -29,7 +37,7 @@ char	*ft_strrchr(const char *s, int c)
 		s--;
 		i--;
 	}
-	return ("NULL");
+	return (NULL);
 }
 
 /*int	main(void)*/
