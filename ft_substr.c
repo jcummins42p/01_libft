@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:56:25 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/30 17:07:46 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/11/01 14:52:54 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	sub = (char *)malloc((len) * sizeof(char));
-	if (sub == NULL)
-		return (NULL);
 	while (i < len && s[start])
 	{
 		sub[i++] = s[start++];
