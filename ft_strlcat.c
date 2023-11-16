@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:48:46 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/31 18:08:57 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/11/15 20:42:52 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,23 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	slen;
 	size_t	dlen;
-	size_t	ret;
-	size_t	si;
+	size_t	i;
 
-	si = 0;
-	dlen = ft_strlen(dst);
-	slen = ft_strlen(src);
-	ret = slen;
-	if (!dst || size == 0)
-		return (ret);
-	ret = dlen;
-	if (size < dlen)
-		return (size);
-	if (size > 0 && dlen < (size - 1))
+	if (size == 0)
+		return (ft_strlen(src));
+	i = 0;
+	while (dst[i] && i < size)
+		i++;
+	dlen = i;
+	while (src[i - dlen] && i < size - 1)
 	{
-		while (dlen < (size - 1) && src[si])
-			dst[dlen++] = src[si++];
-		dst[dlen++] = '\0';
+		dst[i] = src[i - dlen];
+		i++;
 	}
-	return (ret + ft_strlen(src));
+	if (dlen < size)
+		dst[i] = '\0';
+	return (dlen + ft_strlen(src));
 }
 
 /*int	main(void)*/
@@ -55,19 +51,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	/*printf("Return Value is %d\n", (int)ft_strlcat(dst, src, -1));*/
 	/*printf("%s\n", dst);*/
 /*//6*/
-	/*ft_strlcat(dst, src, 0);*/
-	/*printf("%s\n", dst);*/
-	/*ft_strlcat(dst, src, 0);*/
-	/*printf("%s\n", dst);*/
-	/*ft_strlcat(dst, src, 0);*/
-	/*printf("%s\n", dst);*/
-	/*ft_strlcat(dst, src, 0);*/
-	/*printf("%s\n", dst);*/
-	/*ft_strlcat(dst, src, 0);*/
-	/*printf("%s\n", dst);*/
-	/*ft_strlcat(dst, src, 0);*/
-	/*printf("%s\n", dst);*/
-	/*ft_strlcat(dst, src, 0);*/
-	/*printf("%s\n", dst);*/
 	/*return(0);*/
 /*}*/
