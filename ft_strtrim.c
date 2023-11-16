@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:05:20 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/25 18:59:12 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/11/16 15:36:14 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,18 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*trim;
 	size_t	i;
-	size_t	j;
-	size_t	k;
 
+	if (!s1 || !set)
+		return (NULL);
 	i = 0;
-	j = 0;
-	k = 0;
 	while (s1[i] == set[0])
 		i++;
-	while (s1[i])
-	{
-		j++;
-		i++;
-	}
-	while (s1[--i] == set[0])
-		j--;
-	trim = (char *)malloc(j * sizeof(char));
-	if (trim == NULL)
-		return (NULL);
-	while (k < j)
-		trim[k++] = s1[(++i - j)];
-	trim[k] = '\0';
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	i = ft_strlen(s1);
+	while (i && ft_strchr(set, s1[i]))
+		i--;
+	trim = ft_substr(s1, 0, i + 1);
 	return (trim);
 }
 

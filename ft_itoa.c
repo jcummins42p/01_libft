@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 12:07:45 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/30 17:08:45 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/11/16 17:20:47 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ char	*p_digits(char *s, int n, int neg)
 	int	i;
 
 	i = n_digits(n);
+	if (i <= 0)
+		return (0);
 	while ((i + neg) >= 0)
 	{
 		s[--i + neg] = "0123456789"[n % 10];
@@ -46,7 +48,7 @@ char	*ft_itoa(int n)
 	int		neg;
 
 	neg = 0;
-	if (n == INT_MIN)
+	if (n == -2147483648)
 	{
 		str = "-2147483648";
 		return (str);
@@ -56,7 +58,7 @@ char	*ft_itoa(int n)
 		neg = 1;
 		n = -n;
 	}
-	str = (char *)malloc((n_digits(n) + neg) * sizeof(char));
+	str = (char *)malloc((n_digits(n) + 1 + neg) * sizeof(char));
 	if (!str)
 		return (NULL);
 	p_digits(str, n, neg);
@@ -67,7 +69,7 @@ char	*ft_itoa(int n)
 /*{*/
 	/*int	i;*/
 
-	/*i = 2147483647;*/
+	/*i = -2147483648;*/
 	/*printf("The number %d as a string is %s\n", i, ft_itoa(i));*/
 	/*return (0);*/
 /*}*/

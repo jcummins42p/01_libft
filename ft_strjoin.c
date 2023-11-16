@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:28:46 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/25 18:53:36 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/11/16 15:21:25 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
-	while (s1[i])
-		i++;
-	while (s2[j++])
-		i++;
-	join = (char *)malloc(i * sizeof(char));
+	if (!s1 || !s2)
+		return (NULL);
+	join = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	if (join == NULL)
 		return (NULL);
 	i = 0;

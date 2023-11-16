@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:46:20 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/30 16:59:58 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/11/16 16:57:12 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,15 @@ static unsigned int	wcount(char const *s, char c)
 	int	i;
 	int	words;
 
+	if (!s)
+		return (0);
 	i = 0;
 	words = 0;
 	while (s[i])
 	{
 		while (s[i] == c)
 			i++;
-		if (s[i] != c)
+		if (s[i] != c && s[i])
 			words++;
 		while (s[i] != c && s[i])
 			i++;
@@ -50,26 +52,22 @@ char	**ft_split(char const *s, char c)
 {
 	char			**split;
 	unsigned int	i;
-	unsigned int	j;
-	unsigned int	k;
+	unsigned int	word;
 
 	i = 0;
-	j = 0;
-	k = 0;
+	word = 0;
 	split = (char **)malloc((wcount(s, c) + 1) * sizeof(char *));
 	if (split == NULL)
 		return (NULL);
-	while (j < wcount(s, c))
+	while (word < wcount(s, c))
 	{
-		split[j] = (char *)malloc(lcount(s, c, i));
 		while (s[i] == c)
 			i++;
-		while (s[i] && s[i] != c)
-			split[j][k++] = s[i++];
-		k = 0;
-		j++;
+		split[word] = ft_substr(s, i, lcount(s, c, i));
+		i += lcount(s, c, i);
+		word++;
 	}
-	split[j] = NULL;
+	split[word] = NULL;
 	return (split);
 }
 
@@ -79,7 +77,7 @@ char	**ft_split(char const *s, char c)
 	/*char		c;*/
 	/*int			i;*/
 
-	/*str = "One two three four five";*/
+	/*str = "   tripouille ";*/
 	/*c = ' ';*/
 	/*i = 0;*/
 	/*while (i < 5)*/

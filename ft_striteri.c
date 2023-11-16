@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 15:33:55 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/30 17:13:20 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/11/16 17:24:41 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	{
 		while (s[i])
 		{
-			f(1, &s[i]);
+			f(i, &s[i]);
 			i++;
 		}
 	}
