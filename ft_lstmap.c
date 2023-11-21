@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 17:04:30 by jcummins          #+#    #+#             */
-/*   Updated: 2023/11/21 16:24:30 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/11/21 20:57:17 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	while (lst)
 	{
 		new->next = ft_lstnew(f(lst->content));
-		if (!new->next)
+		if (new->next == NULL)
 		{
 			ft_lstclear(&temp, del);
 			return (0);
 		}
-		new = new->next;
 		lst = lst->next;
+		new = new->next;
 	}
 	new->next = NULL;
-	return (new);
+	return (temp);
 }
 
 /*int	main(void)*/
