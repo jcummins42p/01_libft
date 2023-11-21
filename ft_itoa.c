@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 12:07:45 by jcummins          #+#    #+#             */
-/*   Updated: 2023/11/16 17:20:47 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/11/21 16:32:28 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,9 @@ char	*ft_itoa(int n)
 	neg = 0;
 	if (n == -2147483648)
 	{
+		str = malloc(12 * sizeof(char));
+		if (!str)
+			return (NULL);
 		str = "-2147483648";
 		return (str);
 	}

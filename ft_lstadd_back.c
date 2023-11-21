@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:56:11 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/30 17:52:01 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/11/21 16:01:43 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (lst && new)
+	if (*lst == NULL)
+		*lst = new;
+	else
 		ft_lstlast(*lst)->next = new;
 }
 

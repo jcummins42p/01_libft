@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:58:31 by jcummins          #+#    #+#             */
-/*   Updated: 2023/10/30 17:37:33 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/11/21 15:29:16 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list	**curr;
-	t_list	*aux;
+	t_list	*swap;
 
-	curr = **lst;
-	while (curr != NULL)
+	if (!lst || !del)
+		return ;
+	while (*lst != NULL)
 	{
-		aux = curr;
-		curr = curr->next;
-		free(aux);
+		swap = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		(*lst) = swap;
 	}
-	*lst = NULL;
 }
