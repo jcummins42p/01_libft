@@ -6,13 +6,13 @@
 #    By: jcummins <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/26 18:08:59 by jcummins          #+#    #+#              #
-#    Updated: 2023/11/21 18:40:00 by jcummins         ###   ########.fr        #
+#    Updated: 2023/11/22 10:47:41 by jcummins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 HEADER = libft.h
-CC = gcc
+CC = cc
 CFLAGS = -g -Werror -Wextra -Wall
 SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c\
 	   ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c\
