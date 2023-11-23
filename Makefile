@@ -54,9 +54,9 @@ clean:
 	@echo "Removing all object files"
 	@rm -rf $(OBJS) $(BOBS)
 
-fclean:
+fclean: clean
 	@echo "Removing all object files and library"
-	@rm -rf $(OBJS) $(BOBS) $(NAME)
+	@rm -rf $(NAME)
 
 re:	fclean all
 
