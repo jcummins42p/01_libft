@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jcummins <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: jcummins <jcummins@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/26 18:08:59 by jcummins          #+#    #+#              #
-#    Updated: 2023/11/23 14:20:22 by jcummins         ###   ########.fr        #
+#    Updated: 2023/11/23 15:02:25 by jcummins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ bonus: $(OBJS) $(BOBS)
 	ranlib $(NAME)
 
 %.o:	%.c
-	$(CC) -c $(CFLAGS) $?
+	$(CC) -c -fPIC $(CFLAGS) $?
 
 clean:
 	@echo "Removing all object files"
@@ -56,5 +56,5 @@ fclean: clean
 re:	fclean all
 
 so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BSRC)
+	gcc -nostartfiles -shared -fPIC -o libft.so $(OBJS) $(BOBS)
