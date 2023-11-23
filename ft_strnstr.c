@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 17:52:24 by jcummins          #+#    #+#             */
-/*   Updated: 2023/11/23 15:07:25 by jcummins         ###   ########.fr       */
+/*   Updated: 2023/11/23 16:04:25 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	si = 0;
 	fi = 0;
 	found = 0;
-	if (!*little || !len)
+	if ((!big || !little ) && len == 0)
+		return (NULL);
+	if (!little)
 		return ((char *)big);
 	while (big[si] && len)
 	{
