@@ -6,7 +6,7 @@
 #    By: jcummins <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/26 18:08:59 by jcummins          #+#    #+#              #
-#    Updated: 2023/11/23 12:57:03 by jcummins         ###   ########.fr        #
+#    Updated: 2023/11/23 13:11:48 by jcummins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,10 +54,9 @@ clean:
 	@echo "Removing all object files"
 	@rm -rf $(OBJS) $(BOBS)
 
-fclean:
-	@echo "Removing all object files, library and .out files"
-	@rm -rf $(OBJS) $(BOBS) $(NAME)
-	@rm *.out
+fclean: clean
+	@echo "Removing all object files and library"
+	@rm -rf $(NAME)
 
 re:	fclean all
 
