@@ -1,3 +1,0 @@
-#This passed moulinette in full, despite some interesting conflicts between warmachine and libft-unit-test about how the strnstr function should handle some edge cases.Unit test wanted the function to handle being passed both a NULL argument and len of 0 by returning NULL, whereas warmachine seemed to complain about this, saying that it should have crashed. In the end I submitted the version that passes unit test, and moulinette didn't complain.
-#I should also guard against being passed null arguments in two of the bonus questions - though again this was not an issue that caused and loss of points.
-

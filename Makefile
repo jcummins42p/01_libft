@@ -6,7 +6,7 @@
 #    By: jcummins <jcummins@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/26 18:08:59 by jcummins          #+#    #+#              #
-#    Updated: 2024/04/16 20:33:00 by jcummins         ###   ########.fr        #
+#    Updated: 2024/04/16 20:48:02 by jcummins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,7 @@ $(GNLO_DIR)/%.o: $(GNL_DIR)/%.c
 
 clean:
 	@echo "Removing all object files"
-	@rm -rf $(O_DIR) $(BO_DIR) $(PFO_DIR)
+	@rm -rf $(O_DIR) $(BO_DIR) $(PFO_DIR) $(GNLO_DIR)
 	@rm -rf *.so
 
 fclean: clean
