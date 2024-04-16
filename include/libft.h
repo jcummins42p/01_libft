@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:38:35 by jcummins          #+#    #+#             */
-/*   Updated: 2024/04/16 19:57:22 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/04/16 20:46:24 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 # include <bsd/string.h>
 # include <fcntl.h>
 # include <stdarg.h>
-# include "ft_printf.h"
 
 typedef struct s_list
 {
@@ -77,8 +76,36 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
 //		ft_printf
+int	format(va_list arg, char c);
 int	ft_printf(const char *str, ...);
-//		nformats
+/* nformats */
+int	print_ptr(void *ptr);
+int	print_int(int num);
+int	print_hex(unsigned int num, int cap);
+int	print_hex_ptr(unsigned long long num, int cap);
+int	print_usi(unsigned int num);
+/* cformats */
+int	print_str(char *str);
+int	print_char(char chr);
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 64
+# endif
+
+/* GNL */
+char	*split_newline(char *str);
+char	*get_buffer(int fd);
+int		extend_line(int fd, char **line);
+char	*get_line(int fd);
+char	*get_next_line(int fd);
+
+/* UTILS */
+char	*ft_strjoin(char const *s1, char const *s2);
+size_t	ft_strlen(const char *s);
+void	*ft_memmove(void *dest, const void *src, size_t n);
+char	*ft_strdup(const char *s);
+int		is_complete(char *str);
 
 #endif
