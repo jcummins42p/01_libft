@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:46:20 by jcummins          #+#    #+#             */
-/*   Updated: 2023/11/16 16:57:12 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/04/29 16:55:57 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,18 +53,22 @@ char	**ft_split(char const *s, char c)
 	char			**split;
 	unsigned int	i;
 	unsigned int	word;
+	unsigned int	words_total;
+	unsigned int	letters_total;
 
 	i = 0;
 	word = 0;
-	split = (char **)malloc((wcount(s, c) + 1) * sizeof(char *));
+	words_total = wcount(s, c);
+	split = (char **)malloc((words_total + 1) * sizeof(char *));
 	if (split == NULL)
 		return (NULL);
-	while (word < wcount(s, c))
+	while (word < words_total)
 	{
+		letters_total = lcount(s, c, i);
 		while (s[i] == c)
 			i++;
-		split[word] = ft_substr(s, i, lcount(s, c, i));
-		i += lcount(s, c, i);
+		split[word] = ft_substr(s, i, letters_total);
+		i += letters_total;
 		word++;
 	}
 	split[word] = NULL;
@@ -77,10 +81,10 @@ char	**ft_split(char const *s, char c)
 	/*char		c;*/
 	/*int			i;*/
 
-	/*str = "   tripouille ";*/
+	/*str = "   tripouille 0 0 0 0 0 0 1";*/
 	/*c = ' ';*/
 	/*i = 0;*/
-	/*while (i < 5)*/
+	/*while (i < 10)*/
 		/*printf("Count of %s\n", ft_split(str, c)[i++]);*/
 	/*return (0);*/
 /*}*/
