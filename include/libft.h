@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:38:35 by jcummins          #+#    #+#             */
-/*   Updated: 2024/05/02 17:46:03 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/05/02 18:23:35 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 char			*ft_strnstr(const char *big, const char *little, size_t len);
 int				ft_atoi(const char *nptr);
-unsigned int	ft_atoi_hex(const char *hex);
+int				ft_atoi_hex(const char *hex);
 void			*ft_calloc(size_t nmemb, size_t size);
 char			*ft_strdup(const char *s);
 //				Part 2 - additional functions

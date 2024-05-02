@@ -6,21 +6,13 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 19:03:56 by jcummins          #+#    #+#             */
-/*   Updated: 2024/05/02 18:20:15 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/05/02 18:24:40 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_whitespace(char c)
-{
-	if ((c >= 9 && c <= 13) || c == ' ')
-		return (1);
-	else
-		return (0);
-}
-
-unsigned int	ft_atoi_hex(const char *hex)
+int	ft_atoi_hex(const char *hex)
 {
 	unsigned int	result;
 	int				base;
