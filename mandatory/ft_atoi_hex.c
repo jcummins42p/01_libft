@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 19:03:56 by jcummins          #+#    #+#             */
-/*   Updated: 2024/05/02 18:24:40 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/05/02 18:59:14 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_atoi_hex(const char *hex)
 		else if (c >= 'a' && c <= 'f')
 			result = result * base + (c - 'a' + 10);
 		else
-			return (0);
+			return (result);
 	}
 	return (result);
 }
