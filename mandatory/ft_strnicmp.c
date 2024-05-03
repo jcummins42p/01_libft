@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 17:14:28 by jcummins          #+#    #+#             */
-/*   Updated: 2024/05/03 17:27:30 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:30:27 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int	ft_strnicmp(const char *s1, const char *s2, size_t n)
 	{
 		if (p1[i] > p2[i] && (p1[i] + 32) != p2[i] && (p1[i] - 32) != p2[i])
 			return (1);
-		else if (p1[i] < p2[i] && (p1[i] + 32) != p2[i] && (p1[i] - 32) != p2[i])
+		else if (p1[i] < p2[i] && (p1[i] + 32) != p2[i] && \
+				(p1[i] - 32) != p2[i])
 			return (-1);
 		i++;
 	}
