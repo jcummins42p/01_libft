@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:38:35 by jcummins          #+#    #+#             */
-/*   Updated: 2024/09/19 13:55:37 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/09/19 14:27:58 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ float			ft_atof( char *input);
 int				ft_atoi_hex(const char *hex);
 void			*ft_calloc(size_t nmemb, size_t size);
 char			*ft_strdup(const char *s);
+void			ft_free_string_list(char **input);
 //				Part 2 - additional functions
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
