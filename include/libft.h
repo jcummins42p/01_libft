@@ -6,7 +6,7 @@
 /*   By: jcummins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:38:35 by jcummins          #+#    #+#             */
-/*   Updated: 2024/05/03 17:31:33 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/09/19 13:28:33 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # include <bsd/string.h>
 # include <fcntl.h>
 # include <stdarg.h>
+# include <stdbool.h>
 
 typedef struct s_list
 {
