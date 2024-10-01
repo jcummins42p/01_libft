@@ -6,7 +6,7 @@
 #    By: jcummins <jcummins@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/26 18:08:59 by jcummins          #+#    #+#              #
-#    Updated: 2024/04/16 20:48:02 by jcummins         ###   ########.fr        #
+#    Updated: 2024/10/01 13:51:59 by jcummins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,13 +35,13 @@ PF_OBJS = $(PF_SRCS:$(PF_DIR)/%.c=$(PFO_DIR)/%.o)
 GNL_SRCS = $(shell find $(GNL_DIR) -name '*.c')
 GNL_OBJS = $(GNL_SRCS:$(GNL_DIR)/%.c=$(GNLO_DIR)/%.o)
 
-all: $(NAME) bonus printf gnl
+all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar -r $@ $?
 	ranlib $(NAME)
 
-bonus: $(OBJS) $(B_OBJS)
+bonus: $(NAME) $(B_OBJS)
 	@echo "Making Bonus and adding to libft.a"
 	ar r $(NAME) $^
 	ranlib $(NAME)

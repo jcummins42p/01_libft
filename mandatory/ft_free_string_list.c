@@ -6,7 +6,7 @@
 /*   By: jcummins <jcummins@student.42prague.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 14:26:52 by jcummins          #+#    #+#             */
-/*   Updated: 2024/09/19 14:27:22 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/10/01 13:44:07 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ void	ft_free_string_list(char **input)
 	if (!input || !*input)
 		return;
 	while(input[i])
-		free input[i++];
+		free (input[i++]);
 	free (input);
 }
